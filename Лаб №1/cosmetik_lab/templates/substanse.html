@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% block title %}{{ substanse.title }}{% endblock %}
+{% block content1 %}   
+    <button type="submit" class="button_login">Вход</button>
+    <!-- <button type="submit" class="button_register">Регистрация</button> -->
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/beauti.css' %}">
+<div class="card_sub">
+
+        <img src='/static/img/{{substanse.image}}' class="card__img_sub" alt="{{substanse.title}}">
+        <div class="card_sub_2">
+        
+        <!-- <img src="https://sun9-30.userapi.com/c848124/u7899763/d12/-3/z_c702990c3d.jpg" class="card_img" alt="{{substanse.title}}">  -->
+
+                <p class="card__title_sub">{{substanse.title}}</p>
+                <p class="card__text_sub">{{substanse.text}}</p>
+                <p class="card__text_sub">{{substanse.desc}}</p>
+                <p class="card__title_sub" style="margin-top: auto; font-size: 30px;">Цена: {{substanse.price}} ₽ / г</p>
+            </div>
+
+</div>
+
+{% endblock %}

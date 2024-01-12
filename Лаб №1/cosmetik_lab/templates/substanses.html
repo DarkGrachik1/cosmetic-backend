@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% block title %}Список веществ для производства косметики{% endblock %}
+
+
+
+    {% block content1 %}
+    <form method="GET" action="{% url 'substances' %}">
+        <div class="search-bar">
+            <input type="text" class="search__input" name="query_substances" id="search-input" placeholder="Поиск" value="{{search_value}}">
+            <button type="submit" id="search-button" class="button_search">Поиск</button>
+        </div>
+    </form>
+    <button type="submit" class="button_login">Вход</button>
+    <!-- <button type="submit" class="button_register">Регистрация</button> -->
+
+{% endblock %}
+{% block content %}
+<!-- <form action="sendText" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input name="text" type="text"><br><br>
+    <input type="submit" value="Submit" >
+</form> -->
+
+
+
+<div>
+    <div class="cards">
+    {% for substanse in filtered_data %}
+            <div class="card">
+                <!-- <div> -->
+                    <img src='static/img/{{substanse.image}}' class="card__img" alt="{{substanse.title}}">
+                    <p class="cost">{{substanse.price}} ₽ / г</p>
+                    <!-- <img src="https://sun9-30.userapi.com/c848124/u7899763/d12/-3/z_c702990c3d.jpg" class="card_img" alt="{{substanse.title}}">  -->
+                     
+                <!-- </div> -->
+                        <!-- <div> -->
+                            <p class="card__title">{{substanse.title}}</p>
+                            <p class="card__text">{{substanse.text}}</p>
+                            <a href="{% url 'substanse_url' substanse.id %}" class="card__check">Подробнее</a>
+                        <!-- </div> -->
+            </div>
+            <!--"{% static 'img/{substanse.src}' %}"-->
+        <!--<div><img src="/home/student/RIP_project/cosmetik_lab/cosmetik_lab/static/img/{{substanse.src}}"></div>  -->  
+       <!-- <li><a href="{% url 'substanse_url' substanse.id %}">{{ substanse.title }}</a> </li>-->
+    {% empty %}
+        <p class="text404">По вашему запросу ничего не найдено.</p>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}
