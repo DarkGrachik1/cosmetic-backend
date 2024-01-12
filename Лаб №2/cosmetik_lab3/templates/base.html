@@ -1,0 +1,18 @@
+{% load static %}
+<!doctype html>
+
+<html lang="en" class="h-100">
+<head>
+  <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/beauti.css' %}">
+</head>
+<body style="margin: 0px; background-color: #ebefe3;">
+  <div class="top_head">
+    <a href="/"><img src='/static/img/promo.png' class="img_promo" alt="promo"></a>
+    {% block content1 %}{% endblock %}
+    <!-- <button type="submit" class="button_register">Регистрация</button> -->
+</div>
+    {% block content %}{% endblock %}
+</body>
+</html>
