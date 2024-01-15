@@ -1,0 +1,46 @@
+{
+	"info": {
+		"_postman_id": "fd40c662-1862-4119-8630-a080b973f5ec",
+		"name": "Lab8 (Грачёва)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29630589"
+	},
+	"item": [
+		{
+			"name": "Обновить результат клинических испытаний",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"clinical_trial\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/cosmetics/28/update_clinical_trial/"
+			},
+			"response": []
+		},
+		{
+			"name": "Вычислить результат клинических испытаний",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cosmetic_id\": 29\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8080/calc_clinical_trial/"
+			},
+			"response": []
+		}
+	]
+}
